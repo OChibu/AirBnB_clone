@@ -1,4 +1,5 @@
-ttests for AirBnB Console
+#!/usr/bin/python3
+""" Unittests for AirBnB Console
 """
 
 from datetime import datetime
