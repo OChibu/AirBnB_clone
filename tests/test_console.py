@@ -465,9 +465,9 @@ class Test_all(unittest.TestCase):
                    "Amenity", "Place", "Review"]
         msg = "[]\n"
         with patch('sys.stdout', new=io.StringIO()) as f:
-                HBNBCommand().onecmd("all")
-                st = f.getvalue()
-                self.assertEqual(msg, st)
+            HBNBCommand().onecmd("all")
+            st = f.getvalue()
+            self.assertEqual(msg, st)
         for i in classes:
             with patch('sys.stdout', new=io.StringIO()) as f:
                 HBNBCommand().onecmd("all " + i)
@@ -480,9 +480,9 @@ class Test_all(unittest.TestCase):
                    "Amenity", "Place", "Review"]
         msg = "[]\n"
         with patch('sys.stdout', new=io.StringIO()) as f:
-                HBNBCommand().onecmd("all()")
-                st = f.getvalue()
-                self.assertEqual(msg, st)
+            HBNBCommand().onecmd("all()")
+            st = f.getvalue()
+            self.assertEqual(msg, st)
         for i in classes:
             with patch('sys.stdout', new=io.StringIO()) as f:
                 pre_cmd = HBNBCommand().precmd(i + ".all()")
@@ -505,9 +505,9 @@ class Test_all(unittest.TestCase):
             all_cl = []
             all_full = []
             for j in alldic.keys():
-                    all_full.append(str(alldic[j]))
-                    if i in j:
-                        all_cl.append(str(alldic[j]))
+                all_full.append(str(alldic[j]))
+                if i in j:
+                    all_cl.append(str(alldic[j]))
             with patch('sys.stdout', new=io.StringIO()) as f:
                 HBNBCommand().onecmd("all " + i)
                 st = f.getvalue()
@@ -666,9 +666,9 @@ class Test_update(unittest.TestCase):
             alldic = storage.all()
             self.assertTrue((i + '.' + id_st[:-1]) in alldic.keys())
         for j, k in zip(attr, value):
-                with patch('sys.stdout', new=io.StringIO()) as f:
-                    HBNBCommand().onecmd("update " + i + " " + id_st +
-                                         " " + j + " " + k)
+            with patch('sys.stdout', new=io.StringIO()) as f:
+                HBNBCommand().onecmd(
+                        "update " + i + " " + id_st + " " + j + " " + k)
         alldic = storage.all()
         ins = alldic[i + '.' + id_st[:-1]]
         for j, k, m in zip(attr, value, typeval):
@@ -688,9 +688,9 @@ class Test_update(unittest.TestCase):
             alldic = storage.all()
             self.assertTrue((i + '.' + id_st[:-1]) in alldic.keys())
         for j, k in zip(attr, value):
-                with patch('sys.stdout', new=io.StringIO()) as f:
-                    HBNBCommand().onecmd("update " + i + " " + id_st +
-                                         " " + j + " " + k)
+            with patch('sys.stdout', new=io.StringIO()) as f:
+                HBNBCommand().onecmd(
+                        "update " + i + " " + id_st + " " + j + " " + k)
         alldic = storage.all()
         ins = alldic[i + '.' + id_st[:-1]]
         for j, k, m in zip(attr, value, typeval):
@@ -710,9 +710,9 @@ class Test_update(unittest.TestCase):
             alldic = storage.all()
             self.assertTrue((i + '.' + id_st[:-1]) in alldic.keys())
         for j, k in zip(attr, value):
-                with patch('sys.stdout', new=io.StringIO()) as f:
-                    HBNBCommand().onecmd("update " + i + " " + id_st +
-                                         " " + j + " " + k)
+            with patch('sys.stdout', new=io.StringIO()) as f:
+                HBNBCommand().onecmd(
+                        "update " + i + " " + id_st + " " + j + " " + k)
         alldic = storage.all()
         ins = alldic[i + '.' + id_st[:-1]]
         for j, k, m in zip(attr, value, typeval):
@@ -732,9 +732,9 @@ class Test_update(unittest.TestCase):
             alldic = storage.all()
             self.assertTrue((i + '.' + id_st[:-1]) in alldic.keys())
         for j, k in zip(attr, value):
-                with patch('sys.stdout', new=io.StringIO()) as f:
-                    HBNBCommand().onecmd("update " + i + " " + id_st +
-                                         " " + j + " " + k)
+            with patch('sys.stdout', new=io.StringIO()) as f:
+                HBNBCommand().onecmd(
+                        "update " + i + " " + id_st + " " + j + " " + k)
         alldic = storage.all()
         ins = alldic[i + '.' + id_st[:-1]]
         for j, k, m in zip(attr, value, typeval):
@@ -754,9 +754,9 @@ class Test_update(unittest.TestCase):
             alldic = storage.all()
             self.assertTrue((i + '.' + id_st[:-1]) in alldic.keys())
         for j, k in zip(attr, value):
-                with patch('sys.stdout', new=io.StringIO()) as f:
-                    HBNBCommand().onecmd("update " + i + " " + id_st +
-                                         " " + j + " " + k)
+            with patch('sys.stdout', new=io.StringIO()) as f:
+                HBNBCommand().onecmd(
+                        "update " + i + " " + id_st + " " + j + " " + k)
         alldic = storage.all()
         ins = alldic[i + '.' + id_st[:-1]]
         for j, k, m in zip(attr, value, typeval):
@@ -779,9 +779,9 @@ class Test_update(unittest.TestCase):
             alldic = storage.all()
             self.assertTrue((i + '.' + id_st[:-1]) in alldic.keys())
         for j, k in zip(attr, value):
-                with patch('sys.stdout', new=io.StringIO()) as f:
-                    HBNBCommand().onecmd("update " + i + " " + id_st +
-                                         " " + j + " " + str(k))
+            with patch('sys.stdout', new=io.StringIO()) as f:
+                HBNBCommand().onecmd(
+                        "update " + i + " " + id_st + " " + j + " " + str(k))
         alldic = storage.all()
         ins = alldic[i + '.' + id_st[:-1]]
         for j, k, m in zip(attr, value, typeval):
@@ -801,9 +801,9 @@ class Test_update(unittest.TestCase):
             alldic = storage.all()
             self.assertTrue((i + '.' + id_st[:-1]) in alldic.keys())
         for j, k in zip(attr, value):
-                with patch('sys.stdout', new=io.StringIO()) as f:
-                    HBNBCommand().onecmd("update " + i + " " + id_st +
-                                         " " + j + " " + k)
+            with patch('sys.stdout', new=io.StringIO()) as f:
+                HBNBCommand().onecmd(
+                        "update " + i + " " + id_st + " " + j + " " + k)
         alldic = storage.all()
         ins = alldic[i + '.' + id_st[:-1]]
         for j, k, m in zip(attr, value, typeval):
